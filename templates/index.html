@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备控制界面</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>设备控制界面</h1>
+    <form action="/control_light" method="post">
+        <input type="radio" name="state" value="ON">开灯
+        <input type="radio" name="state" value="OFF">关灯
+        <button type="submit">提交</button>
+    </form>
+    <p id="status"></p>
+
+    <script>
+        fetch('/status')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('status').innerText = `温度：${data.temperature}℃，灯光状态：${data.light}`;
+            });
+    </script>
+</body>
+</html>

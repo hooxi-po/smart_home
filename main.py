@@ -13,12 +13,10 @@ def main():
     task_scheduler = TaskScheduler()
     task_queue = Queue()
 
-    # 初始化各个模块
     socket_server = SocketServer(device_manager=device_manager)
     data_collector = DataCollector(device_manager, task_queue)
     web_interface = WebInterface(device_manager)
 
-    # 定义任务
     def read_temperature():
         temp = device_manager.get_temperature()
         if temp is not None:
@@ -33,14 +31,12 @@ def main():
                 logging.info(f"更新温度显示：{task['data']}℃")
             task_queue.task_done()
 
-    # 调度任务
     task_scheduler.schedule_task(read_temperature, 3600)  # 每小时读取一次温度
     task_scheduler.executor.submit(task_scheduler.run_scheduler)
     task_scheduler.executor.submit(socket_server.start)
     task_scheduler.executor.submit(data_collector.collect_temperature)
     task_scheduler.executor.submit(task_consumer)
 
-    # 启动Web界面
     web_interface.run()
 
 if __name__ == '__main__':

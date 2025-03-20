@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button[type="submit"] {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+#status {
+    font-size: 18px;
+    margin-top: 20px;
+}
