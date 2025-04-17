@@ -1,0 +1,1 @@
+savedcmd_/home/leven/24-25/smart_home/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /home/leven/24-25/smart_home/Module.symvers -T /home/leven/24-25/smart_home/modules.order -i Module.symvers -e 

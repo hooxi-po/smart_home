@@ -1,0 +1,1 @@
+savedcmd_/home/leven/24-25/smart_home/smart_device_driver.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/leven/24-25/smart_home/smart_device_driver.ko /home/leven/24-25/smart_home/smart_device_driver.o /home/leven/24-25/smart_home/smart_device_driver.mod.o

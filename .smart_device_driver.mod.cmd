@@ -1,0 +1,1 @@
+savedcmd_/home/leven/24-25/smart_home/smart_device_driver.mod := printf '%s\n'   smart_device_driver.o | awk '!x[$$0]++ { print("/home/leven/24-25/smart_home/"$$0) }' > /home/leven/24-25/smart_home/smart_device_driver.mod
